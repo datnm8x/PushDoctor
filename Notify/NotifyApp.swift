@@ -11,7 +11,7 @@ import SwiftUI
 struct NotifyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(keyID: .constant("keyId"), teamID: .constant("teamID"), bundleID: .constant("bundleID"), token: .constant("deviceToken"), sandbox: .constant(true))
         }
     }
 }

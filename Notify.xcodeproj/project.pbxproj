@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,10 @@
 		B426095324CBBEDA0021F4EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426095224CBBEDA0021F4EA /* ContentView.swift */; };
 		B426095524CBBEDB0021F4EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B426095424CBBEDB0021F4EA /* Assets.xcassets */; };
 		B426095824CBBEDB0021F4EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B426095724CBBEDB0021F4EA /* Preview Assets.xcassets */; };
+		B426096224CBC1A50021F4EA /* APNSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B426096124CBC1A50021F4EA /* APNSwift */; };
+		B4E0671524CBE0A900C64684 /* PushClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0671424CBE0A900C64684 /* PushClient.swift */; };
+		B4E0671A24CBECA600C64684 /* NSOpenPane+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */; };
+		B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,9 @@
 		B426095724CBBEDB0021F4EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B426095924CBBEDB0021F4EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B426095A24CBBEDB0021F4EA /* Notify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notify.entitlements; sourceTree = "<group>"; };
+		B4E0671424CBE0A900C64684 /* PushClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushClient.swift; sourceTree = "<group>"; };
+		B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOpenPane+Convenience.swift"; sourceTree = "<group>"; };
+		B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B426096224CBC1A50021F4EA /* APNSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +61,9 @@
 		B426094F24CBBEDA0021F4EA /* Notify */ = {
 			isa = PBXGroup;
 			children = (
+				B4E0671D24CBEF9E00C64684 /* Model */,
+				B4E0671824CBEC9900C64684 /* Extensions */,
+				B4E0671324CBE09B00C64684 /* Services */,
 				B426095024CBBEDA0021F4EA /* NotifyApp.swift */,
 				B426095224CBBEDA0021F4EA /* ContentView.swift */,
 				B426095424CBBEDB0021F4EA /* Assets.xcassets */,
@@ -71,6 +82,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B4E0671324CBE09B00C64684 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B4E0671424CBE0A900C64684 /* PushClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B4E0671824CBEC9900C64684 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B4E0671D24CBEF9E00C64684 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,6 +122,9 @@
 			dependencies = (
 			);
 			name = Notify;
+			packageProductDependencies = (
+				B426096124CBC1A50021F4EA /* APNSwift */,
+			);
 			productName = Notify;
 			productReference = B426094D24CBBEDA0021F4EA /* Notify.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +152,9 @@
 				Base,
 			);
 			mainGroup = B426094424CBBED90021F4EA;
+			packageReferences = (
+				B426096024CBC1A50021F4EA /* XCRemoteSwiftPackageReference "APNSwift" */,
+			);
 			productRefGroup = B426094E24CBBEDA0021F4EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,6 +183,9 @@
 			files = (
 				B426095324CBBEDA0021F4EA /* ContentView.swift in Sources */,
 				B426095124CBBEDA0021F4EA /* NotifyApp.swift in Sources */,
+				B4E0671A24CBECA600C64684 /* NSOpenPane+Convenience.swift in Sources */,
+				B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */,
+				B4E0671524CBE0A900C64684 /* PushClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +325,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mcginty.will.Notify;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcginty.will.notify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -305,7 +349,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mcginty.will.Notify;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcginty.will.notify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -333,6 +377,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B426096024CBC1A50021F4EA /* XCRemoteSwiftPackageReference "APNSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kylebrowning/APNSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B426096124CBC1A50021F4EA /* APNSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B426096024CBC1A50021F4EA /* XCRemoteSwiftPackageReference "APNSwift" */;
+			productName = APNSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B426094524CBBED90021F4EA /* Project object */;
 }
