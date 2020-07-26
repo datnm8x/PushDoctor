@@ -16,7 +16,7 @@ struct AuthorizationKeyPicker: View {
         Picker("Select Authorization Key", selection: $selected) {
             Text("None").tag(nil as AuthorizationKey?)
             ForEach(keys) { key in
-                Text(key.keyID).tag(key as AuthorizationKey?)
+                Text("\(key.name) - \(key.keyID)").tag(key as AuthorizationKey?)
             }
         }
     }

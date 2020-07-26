@@ -14,6 +14,7 @@ struct AuthorizationKey: Codable, Hashable, Identifiable {
     
     // MARK: Properties
     let p8: P8
+    var name: String
     var keyID: String
     var teamID: String
 }

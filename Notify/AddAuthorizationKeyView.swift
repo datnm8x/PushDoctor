@@ -15,6 +15,7 @@ struct AddAuthorizationView: View {
     
     @Environment(\.presentationMode) private var presentationMode
     @State private var importedKey: AuthorizationKey.P8?
+    @State private var name: String = ""
     @State private var keyID: String = ""
     @State private var teamID: String = ""
     
@@ -34,6 +35,11 @@ struct AddAuthorizationView: View {
                 }
             }
             Spacer(minLength: 20)
+            
+            HStack {
+                Text("Name")
+                TextField("name", text: $name)
+            }
 
             HStack {
                 Text("Key ID")
@@ -62,7 +68,7 @@ struct AddAuthorizationView: View {
         presentationMode.wrappedValue.dismiss()
         
         guard let importedKey = importedKey else { return }
-        let key = AuthorizationKey(p8: importedKey, keyID: keyID, teamID: teamID)
+        let key = AuthorizationKey(p8: importedKey, name: name, keyID: keyID, teamID: teamID)
         store.add(authorizationKey: key)
     }
     

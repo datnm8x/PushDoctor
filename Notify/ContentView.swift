@@ -65,5 +65,4 @@ struct ContentView: View {
             print(result)
         }
     }
-    
 }

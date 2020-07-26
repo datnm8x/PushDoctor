@@ -9,14 +9,16 @@ import Foundation
 
 class PushStore: ObservableObject {
     
-    @Published var authorizationKeys: [AuthorizationKey]
+    @Published var authorizationKeys: [AuthorizationKey] {
+        didSet { PushStore.updateStoredAuthorizationKeys(authorizationKeys) }
+    }
 
     // MARK: Initializers
     init() {
-        self.authorizationKeys = []
+        self.authorizationKeys = PushStore.storedAuthorizationKeys
     }
 
-//    // MARK: Modifying
+    // MARK: Modifying
     func add(authorizationKey: AuthorizationKey) {
         authorizationKeys.append(authorizationKey)
     }
@@ -37,21 +39,21 @@ class PushStore: ObservableObject {
 }
 
 //// MARK: Storage
-//private extension DomainStore {
-//
-//    static var storageURL: URL {
-//        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//        return documentsDirectory.appendingPathComponent("linkedDomains").appendingPathExtension("json")
-//    }
-//
-//    static var storedLinkedDomains: [LinkedDomain] = {
-//        guard let data = try? Data(contentsOf: storageURL) else { return [] }
-//        let linkedDomains = try! JSONDecoder().decode([LinkedDomain].self, from: data)
-//        return linkedDomains
-//    }()
-//
-//    static func updateStoredLinkedDomains(_ domains: [LinkedDomain]) {
-//        let data = try! JSONEncoder().encode(domains)
-//        try? data.write(to: storageURL)
-//    }
-//}
+private extension PushStore {
+
+    static var storageURL: URL {
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        return documentsDirectory.appendingPathComponent("authorizationKeys").appendingPathExtension("json")
+    }
+
+    static var storedAuthorizationKeys: [AuthorizationKey] = {
+        guard let data = try? Data(contentsOf: storageURL) else { return [] }
+        let keys = try! JSONDecoder().decode([AuthorizationKey].self, from: data)
+        return keys
+    }()
+
+    static func updateStoredAuthorizationKeys(_ keys: [AuthorizationKey]) {
+        let data = try! JSONEncoder().encode(keys)
+        try? data.write(to: storageURL)
+    }
+}
