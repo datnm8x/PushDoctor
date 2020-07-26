@@ -15,6 +15,13 @@
 		B4E0671524CBE0A900C64684 /* PushClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0671424CBE0A900C64684 /* PushClient.swift */; };
 		B4E0671A24CBECA600C64684 /* NSOpenPane+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */; };
 		B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */; };
+		B4E0674224CBFD3C00C64684 /* AddAuthorizationKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674124CBFD3C00C64684 /* AddAuthorizationKeyView.swift */; };
+		B4E0674424CC028100C64684 /* PayloadEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674324CC028100C64684 /* PayloadEditorView.swift */; };
+		B4E0674624CC06C700C64684 /* Binding+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674524CC06C700C64684 /* Binding+Optional.swift */; };
+		B4E0674824CD2EB900C64684 /* PushStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674724CD2EB900C64684 /* PushStore.swift */; };
+		B4E0674A24CD2EC800C64684 /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674924CD2EC800C64684 /* Push.swift */; };
+		B4E0674C24CD35DF00C64684 /* AuthorizationKeyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674B24CD35DF00C64684 /* AuthorizationKeyPicker.swift */; };
+		B4E0674E24CD39B900C64684 /* EnvironmentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674D24CD39B900C64684 /* EnvironmentPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		B4E0671424CBE0A900C64684 /* PushClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushClient.swift; sourceTree = "<group>"; };
 		B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOpenPane+Convenience.swift"; sourceTree = "<group>"; };
 		B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationKey.swift; sourceTree = "<group>"; };
+		B4E0674124CBFD3C00C64684 /* AddAuthorizationKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAuthorizationKeyView.swift; sourceTree = "<group>"; };
+		B4E0674324CC028100C64684 /* PayloadEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadEditorView.swift; sourceTree = "<group>"; };
+		B4E0674524CC06C700C64684 /* Binding+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optional.swift"; sourceTree = "<group>"; };
+		B4E0674724CD2EB900C64684 /* PushStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushStore.swift; sourceTree = "<group>"; };
+		B4E0674924CD2EC800C64684 /* Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Push.swift; sourceTree = "<group>"; };
+		B4E0674B24CD35DF00C64684 /* AuthorizationKeyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationKeyPicker.swift; sourceTree = "<group>"; };
+		B4E0674D24CD39B900C64684 /* EnvironmentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +80,10 @@
 				B4E0671324CBE09B00C64684 /* Services */,
 				B426095024CBBEDA0021F4EA /* NotifyApp.swift */,
 				B426095224CBBEDA0021F4EA /* ContentView.swift */,
+				B4E0674324CC028100C64684 /* PayloadEditorView.swift */,
+				B4E0674124CBFD3C00C64684 /* AddAuthorizationKeyView.swift */,
+				B4E0674B24CD35DF00C64684 /* AuthorizationKeyPicker.swift */,
+				B4E0674D24CD39B900C64684 /* EnvironmentPicker.swift */,
 				B426095424CBBEDB0021F4EA /* Assets.xcassets */,
 				B426095924CBBEDB0021F4EA /* Info.plist */,
 				B426095A24CBBEDB0021F4EA /* Notify.entitlements */,
@@ -86,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E0671424CBE0A900C64684 /* PushClient.swift */,
+				B4E0674724CD2EB900C64684 /* PushStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -94,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */,
+				B4E0674524CC06C700C64684 /* Binding+Optional.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -102,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */,
+				B4E0674924CD2EC800C64684 /* Push.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,11 +202,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E0674C24CD35DF00C64684 /* AuthorizationKeyPicker.swift in Sources */,
 				B426095324CBBEDA0021F4EA /* ContentView.swift in Sources */,
+				B4E0674A24CD2EC800C64684 /* Push.swift in Sources */,
 				B426095124CBBEDA0021F4EA /* NotifyApp.swift in Sources */,
+				B4E0674424CC028100C64684 /* PayloadEditorView.swift in Sources */,
 				B4E0671A24CBECA600C64684 /* NSOpenPane+Convenience.swift in Sources */,
 				B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */,
+				B4E0674624CC06C700C64684 /* Binding+Optional.swift in Sources */,
+				B4E0674224CBFD3C00C64684 /* AddAuthorizationKeyView.swift in Sources */,
+				B4E0674E24CD39B900C64684 /* EnvironmentPicker.swift in Sources */,
 				B4E0671524CBE0A900C64684 /* PushClient.swift in Sources */,
+				B4E0674824CD2EB900C64684 /* PushStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

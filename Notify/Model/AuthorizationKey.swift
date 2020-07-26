@@ -6,17 +6,32 @@
 //
 
 import Foundation
+import SwiftUI
 
-
-struct AuthorizationKey: Codable {
+struct AuthorizationKey: Codable, Hashable, Identifiable {
+    
+    var id: P8 { p8 }
     
     // MARK: Properties
-    let sourceURL: URL
-    let contents: String
+    let p8: P8
+    var keyID: String
+    var teamID: String
+}
+
+extension AuthorizationKey {
+    
+    struct P8: Codable, Hashable, Identifiable {
+        
+        var id: URL { sourceURL }
+        
+        // MARK: Properties
+        let sourceURL: URL
+        let contents: String
+    }
 }
 
 // MARK: - FileOpenable
-extension AuthorizationKey: FileOpenable {
+extension AuthorizationKey.P8: FileOpenable {
     
     init?(url: URL) {
         guard let contents = try? String(contentsOf: url) else { return nil }

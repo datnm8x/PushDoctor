@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct NotifyApp: App {
+    
+    @StateObject var store = PushStore()
+    var client = PushClient()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(keyID: .constant("keyId"), teamID: .constant("teamID"), bundleID: .constant("bundleID"), token: .constant("deviceToken"), sandbox: .constant(true))
+            ContentView(store: store, client: client)
         }
     }
 }
