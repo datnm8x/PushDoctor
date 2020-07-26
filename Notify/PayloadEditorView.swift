@@ -40,7 +40,8 @@ struct PayloadEditorView: View {
     }
     
     func lint() {
-        guard let data = jsonInput.data(using: .utf8), let prettyPrinted = data.prettyPrintedJSON else {
+        let processedInput = jsonInput.replacingOccurrences(of: "“", with: "\"").replacingOccurrences(of: "”", with: "\"")
+        guard let data = processedInput.data(using: .utf8), let prettyPrinted = data.prettyPrintedJSON else {
             isValid = false
             return
         }
