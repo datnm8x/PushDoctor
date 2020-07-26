@@ -11,26 +11,41 @@ private var client = PushClient()
 
 struct PayloadEditorView: View {
     
-    @Binding var json: String
-    @State private var lintsSuccessfully: Bool = true
+    // MARK: Properties
+    @Binding var jsonInput: String
+    @State private var isValid: Bool = true
     
     var body: some View {
         VStack {
-            TextEditor(text: $json)
-                .border(lintsSuccessfully ? Color.green : Color.red)
+            TextEditor(text: $jsonInput)
+                .border(isValid ? Color.green : Color.red)
                 .disableAutocorrection(true)
             HStack {
                 Spacer()
+                Button("Import", action: importJSON)
                 Button("Lint", action: lint)
             }
         }
     }
     
+    func importJSON() {
+        NSOpenPanel.open(from: ["json"]) { (result: Result<String, NSOpenPanel.OpenError>) in
+            switch result {
+            case .failure(let error): debugPrint("Error: \(error)")
+            case .success(let string):
+                self.jsonInput = string
+                self.lint()
+            }
+        }
+    }
+    
     func lint() {
-        guard let _ = try? JSONSerialization.jsonObject(with: json.data(using: .utf8)!, options: []) else {
-            lintsSuccessfully = false; return
+        guard let data = jsonInput.data(using: .utf8), let prettyPrinted = data.prettyPrintedJSON else {
+            isValid = false
+            return
         }
         
-        lintsSuccessfully = true
+        isValid = true
+        jsonInput = prettyPrinted
     }
 }

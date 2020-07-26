@@ -23,6 +23,7 @@
 		B4E0674C24CD35DF00C64684 /* AuthorizationKeyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674B24CD35DF00C64684 /* AuthorizationKeyPicker.swift */; };
 		B4E0674E24CD39B900C64684 /* EnvironmentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674D24CD39B900C64684 /* EnvironmentPicker.swift */; };
 		B4E0675024CD457300C64684 /* APNSwiftConnection+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674F24CD457300C64684 /* APNSwiftConnection+Convenience.swift */; };
+		B4E0675224CD4E7B00C64684 /* Data+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0675124CD4E7B00C64684 /* Data+JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B4E0674B24CD35DF00C64684 /* AuthorizationKeyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationKeyPicker.swift; sourceTree = "<group>"; };
 		B4E0674D24CD39B900C64684 /* EnvironmentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentPicker.swift; sourceTree = "<group>"; };
 		B4E0674F24CD457300C64684 /* APNSwiftConnection+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APNSwiftConnection+Convenience.swift"; sourceTree = "<group>"; };
+		B4E0675124CD4E7B00C64684 /* Data+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */,
 				B4E0674F24CD457300C64684 /* APNSwiftConnection+Convenience.swift */,
 				B4E0674524CC06C700C64684 /* Binding+Optional.swift */,
+				B4E0675124CD4E7B00C64684 /* Data+JSON.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */,
 				B4E0674624CC06C700C64684 /* Binding+Optional.swift in Sources */,
 				B4E0674224CBFD3C00C64684 /* AddAuthorizationKeyView.swift in Sources */,
+				B4E0675224CD4E7B00C64684 /* Data+JSON.swift in Sources */,
 				B4E0674E24CD39B900C64684 /* EnvironmentPicker.swift in Sources */,
 				B4E0671524CBE0A900C64684 /* PushClient.swift in Sources */,
 				B4E0675024CD457300C64684 /* APNSwiftConnection+Convenience.swift in Sources */,

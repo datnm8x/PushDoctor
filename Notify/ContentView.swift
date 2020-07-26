@@ -43,7 +43,7 @@ struct ContentView: View {
                 TextField("usually a hex string", text: $deviceToken)
             }
             
-            PayloadEditorView(json: $payload)
+            PayloadEditorView(jsonInput: $payload)
             
             EnvironmentPicker(selected: $selectedEnvironment)
             
