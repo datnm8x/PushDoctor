@@ -21,6 +21,7 @@ struct ContentView: View {
     @State private var deviceToken: String = ""
     @State private var payload: String = String.basicTemplateJSON ?? ""
     @State private var selectedEnvironment: Push.Environment = .sandbox
+    @State private var result: String = ""
     
     var body: some View {
         VStack {
@@ -50,6 +51,7 @@ struct ContentView: View {
             
             HStack {
                 Spacer()
+                Text(result)
                 Button("Send", action: send)
                     .disabled(selectedKey == nil || bundleID.isEmpty || deviceToken.isEmpty)
             }
@@ -62,7 +64,11 @@ struct ContentView: View {
         
         client.send(push: push).whenComplete { result in
             //add to log
-            print(result)
+            
+            switch result {
+            case .success: self.result = "Success"
+            case .failure(let error): self.result = "Error: \(error)"
+            }
         }
     }
 }
