@@ -14,7 +14,7 @@ struct ContentView: View {
     var client: PushClient
     
     @State private var isPresentingAddKeySheet: Bool = false
-    @State private var isPresentingTemplatesSheet: Bool = false
+    @State private var isPresentingLogSheet: Bool = false
     
     @State private var selectedKey: AuthorizationKey?
     @State private var bundleID: String = ""
@@ -54,6 +54,11 @@ struct ContentView: View {
                 Text(result)
                 Button("Send", action: send)
                     .disabled(selectedKey == nil || bundleID.isEmpty || deviceToken.isEmpty)
+                Button("Log") {
+                    isPresentingLogSheet.toggle()
+                }.sheet(isPresented: $isPresentingLogSheet, content: {
+                    LogView(store: store)
+                })
             }
         }.padding(20)
     }
@@ -63,11 +68,14 @@ struct ContentView: View {
         let push = Push(authorizationKey: authorizationKey, bundleID: bundleID, deviceToken: deviceToken, environment: selectedEnvironment, payload: payload)
         
         client.send(push: push).whenComplete { result in
-            //add to log
             
             switch result {
-            case .success: self.result = "Success"
-            case .failure(let error): self.result = "Error: \(error)"
+            case .success:
+                self.result = "Success"
+                store.log(.init(push: push, errorDescription: nil))
+            case .failure(let error):
+                self.result = "Error: \(error)"
+                store.log(.init(push: push, errorDescription: "some error"))
             }
         }
     }

@@ -12,30 +12,23 @@ class PushStore: ObservableObject {
     @Published var authorizationKeys: [AuthorizationKey] {
         didSet { PushStore.updateStoredAuthorizationKeys(authorizationKeys) }
     }
+    
+    @Published var activityLog: [LogEntry]
 
     // MARK: Initializers
     init() {
         self.authorizationKeys = PushStore.storedAuthorizationKeys
+        self.activityLog = []
     }
 
     // MARK: Modifying
     func add(authorizationKey: AuthorizationKey) {
         authorizationKeys.append(authorizationKey)
     }
-//
-//    func removeDomain(at indexes: IndexSet) {
-//        linkedDomains.remove(atOffsets: indexes)
-//    }
-//
-//    func moveDomains(atOffsets offsets: IndexSet, to index: Int) {
-//        linkedDomains.move(fromOffsets: offsets, toOffset: index)
-//    }
-//
-//    func updateDomain(for url: URL, with domain: LinkedDomain) {
-//        if let firstIndex = linkedDomains.firstIndex(where: { $0.baseURL == url }) {
-//            linkedDomains.replaceSubrange(firstIndex...firstIndex, with: [domain])
-//        }
-//    }
+    
+    func log(_ logEntry: LogEntry) {
+        activityLog.append(logEntry)
+    }
 }
 
 //// MARK: Storage

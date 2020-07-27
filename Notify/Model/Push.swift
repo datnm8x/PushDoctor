@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Push {
+struct Push: Codable, Hashable {
     
-    enum Environment: String, CaseIterable, Identifiable {
+    enum Environment: String, Codable, CaseIterable, Identifiable {
         case sandbox, production
         
         var id: String { rawValue }

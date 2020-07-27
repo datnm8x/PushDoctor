@@ -28,6 +28,8 @@
 		B4E0675924CE4E5200C64684 /* CustomKeyTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = B4E0675824CE4E5200C64684 /* CustomKeyTemplate.json */; };
 		B4E0675B24CE546D00C64684 /* TemplateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0675A24CE546D00C64684 /* TemplateListView.swift */; };
 		B4E0675D24CE5A7000C64684 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0675C24CE5A7000C64684 /* Template.swift */; };
+		B4E0675F24CE5F3600C64684 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0675E24CE5F3600C64684 /* LogEntry.swift */; };
+		B4E0676124CE5F6C00C64684 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0676024CE5F6C00C64684 /* LogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		B4E0675824CE4E5200C64684 /* CustomKeyTemplate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CustomKeyTemplate.json; sourceTree = "<group>"; };
 		B4E0675A24CE546D00C64684 /* TemplateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateListView.swift; sourceTree = "<group>"; };
 		B4E0675C24CE5A7000C64684 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
+		B4E0675E24CE5F3600C64684 /* LogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
+		B4E0676024CE5F6C00C64684 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 				B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */,
 				B4E0674924CD2EC800C64684 /* Push.swift */,
 				B4E0675C24CE5A7000C64684 /* Template.swift */,
+				B4E0675E24CE5F3600C64684 /* LogEntry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 				B4E0674324CC028100C64684 /* PayloadEditorView.swift */,
 				B4E0674124CBFD3C00C64684 /* AddAuthorizationKeyView.swift */,
 				B4E0675A24CE546D00C64684 /* TemplateListView.swift */,
+				B4E0676024CE5F6C00C64684 /* LogView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,10 +259,12 @@
 				B426095124CBBEDA0021F4EA /* NotifyApp.swift in Sources */,
 				B4E0675D24CE5A7000C64684 /* Template.swift in Sources */,
 				B4E0674424CC028100C64684 /* PayloadEditorView.swift in Sources */,
+				B4E0676124CE5F6C00C64684 /* LogView.swift in Sources */,
 				B4E0671A24CBECA600C64684 /* NSOpenPane+Convenience.swift in Sources */,
 				B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */,
 				B4E0674624CC06C700C64684 /* Binding+Optional.swift in Sources */,
 				B4E0674224CBFD3C00C64684 /* AddAuthorizationKeyView.swift in Sources */,
+				B4E0675F24CE5F3600C64684 /* LogEntry.swift in Sources */,
 				B4E0675224CD4E7B00C64684 /* Data+JSON.swift in Sources */,
 				B4E0674E24CD39B900C64684 /* EnvironmentPicker.swift in Sources */,
 				B4E0671524CBE0A900C64684 /* PushClient.swift in Sources */,
