@@ -11,6 +11,9 @@ private var client = PushClient()
 
 struct PayloadEditorView: View {
     
+    @State private var isPresentingTemplatesSheet: Bool = false
+    
+    
     // MARK: Properties
     @Binding var jsonInput: String
     @State private var isValid: Bool = true
@@ -20,12 +23,24 @@ struct PayloadEditorView: View {
             TextEditor(text: $jsonInput)
                 .border(isValid ? Color.green : Color.red)
                 .disableAutocorrection(true)
+                .font(Font.body.monospacedDigit())
+                
             HStack {
-                Spacer()
+                Button("Templates") {
+                    isPresentingTemplatesSheet.toggle()
+                }.sheet(isPresented: $isPresentingTemplatesSheet, content: {
+                    TemplateListView(selectedTemplate: $jsonInput)
+                })
+                
                 Button("Import", action: importJSON)
+                Spacer()
                 Button("Lint", action: lint)
             }
         }
+    }
+    
+    func chooseJSONTemplate() {
+        print("NYI")
     }
     
     func importJSON() {

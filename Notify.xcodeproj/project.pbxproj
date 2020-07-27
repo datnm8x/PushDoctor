@@ -24,6 +24,10 @@
 		B4E0674E24CD39B900C64684 /* EnvironmentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674D24CD39B900C64684 /* EnvironmentPicker.swift */; };
 		B4E0675024CD457300C64684 /* APNSwiftConnection+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674F24CD457300C64684 /* APNSwiftConnection+Convenience.swift */; };
 		B4E0675224CD4E7B00C64684 /* Data+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0675124CD4E7B00C64684 /* Data+JSON.swift */; };
+		B4E0675724CE4E4900C64684 /* BasicTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = B4E0675624CE4E4900C64684 /* BasicTemplate.json */; };
+		B4E0675924CE4E5200C64684 /* CustomKeyTemplate.json in Resources */ = {isa = PBXBuildFile; fileRef = B4E0675824CE4E5200C64684 /* CustomKeyTemplate.json */; };
+		B4E0675B24CE546D00C64684 /* TemplateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0675A24CE546D00C64684 /* TemplateListView.swift */; };
+		B4E0675D24CE5A7000C64684 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0675C24CE5A7000C64684 /* Template.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		B4E0674D24CD39B900C64684 /* EnvironmentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentPicker.swift; sourceTree = "<group>"; };
 		B4E0674F24CD457300C64684 /* APNSwiftConnection+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APNSwiftConnection+Convenience.swift"; sourceTree = "<group>"; };
 		B4E0675124CD4E7B00C64684 /* Data+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+JSON.swift"; sourceTree = "<group>"; };
+		B4E0675624CE4E4900C64684 /* BasicTemplate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BasicTemplate.json; sourceTree = "<group>"; };
+		B4E0675824CE4E5200C64684 /* CustomKeyTemplate.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CustomKeyTemplate.json; sourceTree = "<group>"; };
+		B4E0675A24CE546D00C64684 /* TemplateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateListView.swift; sourceTree = "<group>"; };
+		B4E0675C24CE5A7000C64684 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,16 +87,12 @@
 		B426094F24CBBEDA0021F4EA /* Notify */ = {
 			isa = PBXGroup;
 			children = (
+				B426095024CBBEDA0021F4EA /* NotifyApp.swift */,
 				B4E0671D24CBEF9E00C64684 /* Model */,
 				B4E0671824CBEC9900C64684 /* Extensions */,
 				B4E0671324CBE09B00C64684 /* Services */,
-				B426095024CBBEDA0021F4EA /* NotifyApp.swift */,
-				B426095224CBBEDA0021F4EA /* ContentView.swift */,
-				B4E0674324CC028100C64684 /* PayloadEditorView.swift */,
-				B4E0674124CBFD3C00C64684 /* AddAuthorizationKeyView.swift */,
-				B4E0674B24CD35DF00C64684 /* AuthorizationKeyPicker.swift */,
-				B4E0674D24CD39B900C64684 /* EnvironmentPicker.swift */,
-				B426095424CBBEDB0021F4EA /* Assets.xcassets */,
+				B4E0675324CE4C6F00C64684 /* Views */,
+				B4E0675524CE4E3000C64684 /* Resources */,
 				B426095924CBBEDB0021F4EA /* Info.plist */,
 				B426095A24CBBEDB0021F4EA /* Notify.entitlements */,
 				B426095624CBBEDB0021F4EA /* Preview Content */,
@@ -129,8 +133,40 @@
 			children = (
 				B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */,
 				B4E0674924CD2EC800C64684 /* Push.swift */,
+				B4E0675C24CE5A7000C64684 /* Template.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B4E0675324CE4C6F00C64684 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4E0675424CE4C7F00C64684 /* Components */,
+				B426095224CBBEDA0021F4EA /* ContentView.swift */,
+				B4E0674324CC028100C64684 /* PayloadEditorView.swift */,
+				B4E0674124CBFD3C00C64684 /* AddAuthorizationKeyView.swift */,
+				B4E0675A24CE546D00C64684 /* TemplateListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4E0675424CE4C7F00C64684 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B4E0674B24CD35DF00C64684 /* AuthorizationKeyPicker.swift */,
+				B4E0674D24CD39B900C64684 /* EnvironmentPicker.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B4E0675524CE4E3000C64684 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B426095424CBBEDB0021F4EA /* Assets.xcassets */,
+				B4E0675624CE4E4900C64684 /* BasicTemplate.json */,
+				B4E0675824CE4E5200C64684 /* CustomKeyTemplate.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +233,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B426095824CBBEDB0021F4EA /* Preview Assets.xcassets in Resources */,
+				B4E0675724CE4E4900C64684 /* BasicTemplate.json in Resources */,
+				B4E0675924CE4E5200C64684 /* CustomKeyTemplate.json in Resources */,
 				B426095524CBBEDB0021F4EA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,9 +247,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4E0674C24CD35DF00C64684 /* AuthorizationKeyPicker.swift in Sources */,
+				B4E0675B24CE546D00C64684 /* TemplateListView.swift in Sources */,
 				B426095324CBBEDA0021F4EA /* ContentView.swift in Sources */,
 				B4E0674A24CD2EC800C64684 /* Push.swift in Sources */,
 				B426095124CBBEDA0021F4EA /* NotifyApp.swift in Sources */,
+				B4E0675D24CE5A7000C64684 /* Template.swift in Sources */,
 				B4E0674424CC028100C64684 /* PayloadEditorView.swift in Sources */,
 				B4E0671A24CBECA600C64684 /* NSOpenPane+Convenience.swift in Sources */,
 				B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */,

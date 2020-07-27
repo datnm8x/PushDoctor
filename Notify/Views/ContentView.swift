@@ -14,12 +14,12 @@ struct ContentView: View {
     var client: PushClient
     
     @State private var isPresentingAddKeySheet: Bool = false
+    @State private var isPresentingTemplatesSheet: Bool = false
+    
     @State private var selectedKey: AuthorizationKey?
     @State private var bundleID: String = ""
     @State private var deviceToken: String = ""
-    @State private var payload: String = """
-{"aps":{"alert":"Testing.. (0)","badge":1,"sound":"default"}}
-"""
+    @State private var payload: String = String.basicTemplateJSON ?? ""
     @State private var selectedEnvironment: Push.Environment = .sandbox
     
     var body: some View {
@@ -43,9 +43,8 @@ struct ContentView: View {
                 TextField("usually a hex string", text: $deviceToken)
             }
             
-            PayloadEditorView(jsonInput: $payload)
-            
             EnvironmentPicker(selected: $selectedEnvironment)
+            PayloadEditorView(jsonInput: $payload)
             
             Spacer(minLength: 50)
             
@@ -62,6 +61,7 @@ struct ContentView: View {
         let push = Push(authorizationKey: authorizationKey, bundleID: bundleID, deviceToken: deviceToken, environment: selectedEnvironment, payload: payload)
         
         client.send(push: push).whenComplete { result in
+            //add to log
             print(result)
         }
     }

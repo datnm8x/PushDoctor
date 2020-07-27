@@ -1,0 +1,7 @@
+{
+  "aps" : {
+    "alert" : "Test",
+    "badge" : 1,
+    "sound" : "default"
+  }
+}

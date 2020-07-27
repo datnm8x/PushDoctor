@@ -26,6 +26,7 @@ struct AddAuthorizationView: View {
                     Text("Authorization Key")
                         .font(Font.headline.bold())
                     Button("Import", action: selectAuthorizationKey)
+                    Spacer()
                 }
                 
                 if let importedKey = importedKey {
@@ -34,19 +35,19 @@ struct AddAuthorizationView: View {
                         .transition(AnyTransition.move(edge: .top))
                 }
             }
+            
             Spacer(minLength: 20)
             
             HStack {
                 Text("Name")
                 TextField("name", text: $name)
+                Spacer()
             }
 
             HStack {
                 Text("Key ID")
                 TextField("key", text: $keyID)
-            }
-            
-            HStack {
+                Spacer()
                 Text("Team ID")
                 TextField("team", text: $teamID)
             }
@@ -57,7 +58,7 @@ struct AddAuthorizationView: View {
                 Button("Save", action: save)
                     .disabled(importedKey == nil)
             }
-        }.padding(40)
+        }.padding()
     }
     
     func cancel() {

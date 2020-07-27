@@ -16,3 +16,19 @@ extension Data {
         return prettyPrintedString
     }
 }
+
+extension String {
+    
+    static var basicTemplateJSON: String? {
+        return Bundle.main.url(forResource: "BasicTemplate", withExtension: "json").flatMap {
+            return try? String(contentsOf: $0, encoding: .utf8)
+        }
+    }
+    
+    static var customKeyTemplateJSON: String? {
+        return Bundle.main.url(forResource: "CustomKeyTemplate", withExtension: "json").flatMap {
+            return try? String(contentsOf: $0, encoding: .utf8)
+        }
+    }
+    
+}

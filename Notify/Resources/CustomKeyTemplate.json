@@ -1,0 +1,9 @@
+{
+  "aps" : {
+    "alert" : "Custom Data Test",
+    "badge" : 1,
+    "sound" : "default"
+  },
+  "customKey" : "String",
+  "customKey2" : 10
+}
