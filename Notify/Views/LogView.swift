@@ -32,6 +32,7 @@ struct LogView: View {
             HStack {
                 Spacer()
                 Button("Close", action: close)
+                    .keyboardShortcut(.defaultAction)
             }
         }.padding()
     }

@@ -55,7 +55,9 @@ struct AddAuthorizationView: View {
             HStack {
                 Spacer()
                 Button("Cancel", action: cancel)
+                    .keyboardShortcut(.cancelAction)
                 Button("Save", action: save)
+                    .keyboardShortcut(.defaultAction)
                     .disabled(importedKey == nil)
             }
         }.padding()

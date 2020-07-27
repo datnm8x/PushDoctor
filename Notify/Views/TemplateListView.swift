@@ -33,7 +33,9 @@ struct TemplateListView: View {
                 HStack {
                     Spacer()
                     Button("Cancel", action: cancel)
+                        .keyboardShortcut(.cancelAction)
                     Button("Choose", action: choose)
+                        .keyboardShortcut(.defaultAction)
                 }
             }.padding()
         }

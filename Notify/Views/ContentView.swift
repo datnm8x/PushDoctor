@@ -54,6 +54,7 @@ struct ContentView: View {
                 Text(result)
                 Button("Send", action: send)
                     .disabled(selectedKey == nil || bundleID.isEmpty || deviceToken.isEmpty)
+                    .keyboardShortcut(.init(.return))
                 Button("Log") {
                     isPresentingLogSheet.toggle()
                 }.sheet(isPresented: $isPresentingLogSheet, content: {
