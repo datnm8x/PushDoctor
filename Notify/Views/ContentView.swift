@@ -10,6 +10,10 @@ import AppKit
 
 struct ContentView: View {
     
+    enum Result: String {
+        case success, failure
+    }
+    
     // MARK: Properties
     var client: PushClient
     @ObservedObject var store: PushStore
@@ -19,7 +23,7 @@ struct ContentView: View {
     @State private var deviceToken: String = ""
     @State private var payload: String = String.basicTemplateJSON ?? ""
     @State private var selectedEnvironment: Push.Environment = .sandbox
-    @State private var result: String?
+    @State private var result: Result?
     
     @State private var isPresentingLogSheet: Bool = false
     
@@ -34,9 +38,13 @@ struct ContentView: View {
             }
              
             HStack {
-                Spacer()
+                result.map { Text($0.rawValue.capitalized) }
+                    .font(.headline)
+                    .foregroundColor(result == .success ? Color.green : Color.red)
+                    .transition(AnyTransition.opacity)
                 
-                result.map(Text.init)
+                Spacer()
+            
                 Button(action: toggleLog) {
                     Label("View Log", systemImage: "book.fill")
                 }.sheet(isPresented: $isPresentingLogSheet) {
@@ -70,14 +78,16 @@ private extension ContentView {
         client.send(push: push).whenComplete { result in
             
             DispatchQueue.main.async {
-                switch result {
-                case .success:
-                    self.result = "Success"
-                    self.store.log(LogEntry(push: push))
-                    
-                case .failure(let error):
-                    self.result = "Failure"
-                    self.store.log(LogEntry(push: push, errorDescription: error.localizedDescription))
+                withAnimation {
+                    switch result {
+                    case .success:
+                        self.result = .success
+                        self.store.log(LogEntry(push: push))
+                        
+                    case .failure(let error):
+                        self.result = .failure
+                        self.store.log(LogEntry(push: push, errorDescription: error.localizedDescription))
+                    }
                 }
             }
         }

@@ -28,7 +28,7 @@ class PushStore: ObservableObject {
     }
     
     func log(_ logEntry: LogEntry) {
-        activityLog.append(logEntry)
+        activityLog.insert(logEntry, at: 0)
     }
 }
 
