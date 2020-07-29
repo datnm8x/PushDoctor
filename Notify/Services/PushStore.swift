@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KeychainAccess
 
 class PushStore: ObservableObject {
     
@@ -34,19 +35,15 @@ class PushStore: ObservableObject {
 //// MARK: Storage
 private extension PushStore {
 
-    static var storageURL: URL {
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        return documentsDirectory.appendingPathComponent("authorizationKeys").appendingPathExtension("json")
-    }
+    private static var keychain: Keychain { Keychain(service: "com.mcginty.will.notify") }
 
     static var storedAuthorizationKeys: [AuthorizationKey] = {
-        guard let data = try? Data(contentsOf: storageURL) else { return [] }
+        guard let data = keychain[data: "authorizationKeys"] else { return [] }
         let keys = try! JSONDecoder().decode([AuthorizationKey].self, from: data)
         return keys
     }()
 
     static func updateStoredAuthorizationKeys(_ keys: [AuthorizationKey]) {
-        let data = try! JSONEncoder().encode(keys)
-        try? data.write(to: storageURL)
+        keychain[data: "authorizationKeys"] = (try? JSONEncoder().encode(keys)) ?? Data()
     }
 }

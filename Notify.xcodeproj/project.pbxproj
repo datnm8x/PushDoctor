@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B413CD7224D11B3A00249C59 /* DateFormatter+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B413CD7124D11B3A00249C59 /* DateFormatter+Utility.swift */; };
+		B413CD7524D1225F00249C59 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = B413CD7424D1225F00249C59 /* KeychainAccess */; };
 		B426095124CBBEDA0021F4EA /* NotifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426095024CBBEDA0021F4EA /* NotifyApp.swift */; };
 		B426095324CBBEDA0021F4EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B426095224CBBEDA0021F4EA /* ContentView.swift */; };
 		B426095524CBBEDB0021F4EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B426095424CBBEDB0021F4EA /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B413CD7524D1225F00249C59 /* KeychainAccess in Frameworks */,
 				B426096224CBC1A50021F4EA /* APNSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +212,7 @@
 			name = Notify;
 			packageProductDependencies = (
 				B426096124CBC1A50021F4EA /* APNSwift */,
+				B413CD7424D1225F00249C59 /* KeychainAccess */,
 			);
 			productName = Notify;
 			productReference = B426094D24CBBEDA0021F4EA /* Notify.app */;
@@ -240,6 +243,7 @@
 			mainGroup = B426094424CBBED90021F4EA;
 			packageReferences = (
 				B426096024CBC1A50021F4EA /* XCRemoteSwiftPackageReference "APNSwift" */,
+				B413CD7324D1225F00249C59 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = B426094E24CBBEDA0021F4EA /* Products */;
 			projectDirPath = "";
@@ -483,6 +487,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B413CD7324D1225F00249C59 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 		B426096024CBC1A50021F4EA /* XCRemoteSwiftPackageReference "APNSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kylebrowning/APNSwift";
@@ -494,6 +506,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B413CD7424D1225F00249C59 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B413CD7324D1225F00249C59 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
 		B426096124CBC1A50021F4EA /* APNSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B426096024CBC1A50021F4EA /* XCRemoteSwiftPackageReference "APNSwift" */;
