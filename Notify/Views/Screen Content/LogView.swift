@@ -41,7 +41,7 @@ struct LogView: View {
                     .keyboardShortcut(.defaultAction)
             }
         }
-        .frame(minWidth: 400, maxWidth: 400, minHeight: 150, maxHeight: 500)
+        .frame(minWidth: 550, maxWidth: 550, minHeight: 300, maxHeight: 500)
         .padding()
     }
 }
@@ -94,12 +94,18 @@ struct LogEntryView: View {
             
             if isExpanded {
                 VStack(alignment: .leading) {
+                    if let error = entry.errorDescription {
+                        LogEntryDetailAttributeView(title: "Error", value: error)
+                    }
                     LogEntryDetailAttributeView(title: "Device Token", value: entry.push.deviceToken)
                     LogEntryDetailAttributeView(title: "Environment", value: entry.push.environment.rawValue.capitalized)
+                    Spacer()
                     Text(entry.push.payload)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         .font(Font.caption.monospacedDigit())
+                        .lineLimit(nil)
                     
-                }.padding([.leading, .trailing, .bottom])
+                }.padding([.bottom])
             }
         }
         .contentShape(Rectangle())

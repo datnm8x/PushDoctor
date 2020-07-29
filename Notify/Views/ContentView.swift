@@ -69,14 +69,16 @@ private extension ContentView {
         guard let push = push else { return }
         client.send(push: push).whenComplete { result in
             
-            switch result {
-            case .success:
-                self.result = "Success"
-                self.store.log(LogEntry(push: push))
-                
-            case .failure(let error):
-                self.result = "Failure"
-                self.store.log(LogEntry(push: push, errorDescription: error.localizedDescription))
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    self.result = "Success"
+                    self.store.log(LogEntry(push: push))
+                    
+                case .failure(let error):
+                    self.result = "Failure"
+                    self.store.log(LogEntry(push: push, errorDescription: error.localizedDescription))
+                }
             }
         }
     }
