@@ -11,6 +11,7 @@ struct TemplateListView: View {
     
     @Environment(\.presentationMode) private var presentationMode
     
+    @State var initialJSON: String
     @State private var templates: [Template] = [.basic, .customKey]
     @Binding var selectedTemplate: String
     
@@ -24,12 +25,18 @@ struct TemplateListView: View {
                         }
                 }
             }.listStyle(SidebarListStyle())
+            
             VStack {
+                Text("Templates")
+                    .font(.headline)
+                
                 ScrollView {
                     Text(selectedTemplate)
+                        .font(Font.body.monospacedDigit())
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         .lineLimit(nil)
                 }
+                
                 HStack {
                     Spacer()
                     Button("Cancel", action: cancel)
@@ -42,6 +49,7 @@ struct TemplateListView: View {
     }
     
     func cancel() {
+        selectedTemplate = initialJSON
         presentationMode.wrappedValue.dismiss()
     }
     

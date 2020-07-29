@@ -28,6 +28,10 @@ extension AuthorizationKey {
         // MARK: Properties
         let sourceURL: URL
         let contents: String
+        
+        var fileName: String {
+            return sourceURL.lastPathComponent
+        }
     }
 }
 

@@ -15,7 +15,7 @@ struct NotifyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(store: store, client: client)
+            ContentView(client: client, store: store)
         }
     }
 }
