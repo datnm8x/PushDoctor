@@ -17,10 +17,10 @@ struct PayloadEditorView: View {
     var body: some View {
         VStack {
             TextEditor(text: $jsonInput)
-                .border(isValid ? Color.green : Color.red)
-                .animation(.default)
                 .disableAutocorrection(true)
                 .font(Font.body.monospacedDigit())
+                .border(isValid ? Color.green : Color.red)
+                .animation(.default)
             
             HStack {
                 Button(action: selectTemplate) {
@@ -37,7 +37,7 @@ struct PayloadEditorView: View {
                     Label("Lint", systemImage: isValid ? "checkmark.circle.fill" : "xmark.circle.fill")
                 }
             }
-        }
+        }.onAppear(perform: lintJSON)
     }
 }
 
