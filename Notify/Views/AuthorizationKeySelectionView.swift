@@ -17,16 +17,30 @@ struct AuthorizationKeySelectionView: View {
     var body: some View {
         HStack {
             AuthorizationKeyPicker(keys: $store.authorizationKeys, selected: $selectedKey)
-            Button("Add New", action: toggleAddKeySheet)
-                .sheet(isPresented: $isPresentingAddKeySheet) {
-                    AddAuthorizationKeyView(store: store, addedKey: $selectedKey)
-                }
+            Button(action: removeSelectedKey) {
+                Label("Delete", systemImage: "trash.fill")
+            }
+            .disabled(selectedKey == nil)
+
+            Button(action: toggleAddKeySheet) {
+                Label("Add New", systemImage: "plus.circle.fill")
+            }
+            .sheet(isPresented: $isPresentingAddKeySheet) {
+                AddAuthorizationKeyView(store: store, addedKey: $selectedKey)
+            }
         }
     }
 }
 
 // MARK: Helper
 private extension AuthorizationKeySelectionView {
+
+    func removeSelectedKey() {
+        guard let key = selectedKey else { return }
+
+        selectedKey = nil
+        store.remove(authorizationKey: key)
+    }
     
     func toggleAddKeySheet() {
         isPresentingAddKeySheet.toggle()

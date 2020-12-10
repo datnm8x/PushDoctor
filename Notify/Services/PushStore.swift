@@ -26,6 +26,10 @@ class PushStore: ObservableObject {
     func add(authorizationKey: AuthorizationKey) {
         authorizationKeys.append(authorizationKey)
     }
+
+    func remove(authorizationKey: AuthorizationKey) {
+        authorizationKeys.removeAll(where: { $0.keyID == authorizationKey.keyID })
+    }
     
     func log(_ logEntry: LogEntry) {
         activityLog.insert(logEntry, at: 0)

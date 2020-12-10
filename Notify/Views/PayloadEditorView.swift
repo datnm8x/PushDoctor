@@ -11,9 +11,9 @@ struct PayloadEditorView: View {
     
     // MARK: Properties
     @Binding var jsonInput: String
+    @State private(set) var isValid: Bool = true
     @State private var isPresentingTemplatesSheet: Bool = false
-    @State private var isValid: Bool = true
-    
+
     var body: some View {
         VStack {
             TextEditor(text: $jsonInput)
@@ -21,7 +21,7 @@ struct PayloadEditorView: View {
                 .font(Font.body.monospacedDigit())
                 .border(isValid ? Color.green : Color.red)
                 .animation(.default)
-            
+
             HStack {
                 Button(action: selectTemplate) {
                     Label("Templates", systemImage: "folder.fill")
