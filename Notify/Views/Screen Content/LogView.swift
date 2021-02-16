@@ -81,7 +81,7 @@ struct LogEntryView: View {
     let isExpanded: Bool
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 8) {
             HStack {
                 Image(systemName: entry.errorDescription == nil ? "checkmark.circle" : "exclamationmark.circle")
                     .foregroundColor(entry.errorDescription == nil ? Color.green : Color.red)
@@ -97,6 +97,7 @@ struct LogEntryView: View {
                     if let error = entry.errorDescription {
                         LogEntryDetailAttributeView(title: "Error", value: error)
                     }
+                    
                     LogEntryDetailAttributeView(title: "Device Token", value: entry.push.deviceToken)
                     LogEntryDetailAttributeView(title: "Environment", value: entry.push.environment.rawValue.capitalized)
                     Spacer()
@@ -105,7 +106,8 @@ struct LogEntryView: View {
                         .font(Font.caption.monospacedDigit())
                         .lineLimit(nil)
                     
-                }.padding([.bottom])
+                }
+                .padding([.bottom])
             }
         }
         .contentShape(Rectangle())

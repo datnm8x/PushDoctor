@@ -19,7 +19,6 @@
 		B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */; };
 		B4E0674224CBFD3C00C64684 /* AddAuthorizationKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674124CBFD3C00C64684 /* AddAuthorizationKeyView.swift */; };
 		B4E0674424CC028100C64684 /* PayloadEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674324CC028100C64684 /* PayloadEditorView.swift */; };
-		B4E0674624CC06C700C64684 /* Binding+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674524CC06C700C64684 /* Binding+Optional.swift */; };
 		B4E0674824CD2EB900C64684 /* PushStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674724CD2EB900C64684 /* PushStore.swift */; };
 		B4E0674A24CD2EC800C64684 /* Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674924CD2EC800C64684 /* Push.swift */; };
 		B4E0674C24CD35DF00C64684 /* AuthorizationKeyPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0674B24CD35DF00C64684 /* AuthorizationKeyPicker.swift */; };
@@ -50,7 +49,6 @@
 		B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationKey.swift; sourceTree = "<group>"; };
 		B4E0674124CBFD3C00C64684 /* AddAuthorizationKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAuthorizationKeyView.swift; sourceTree = "<group>"; };
 		B4E0674324CC028100C64684 /* PayloadEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayloadEditorView.swift; sourceTree = "<group>"; };
-		B4E0674524CC06C700C64684 /* Binding+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Optional.swift"; sourceTree = "<group>"; };
 		B4E0674724CD2EB900C64684 /* PushStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushStore.swift; sourceTree = "<group>"; };
 		B4E0674924CD2EC800C64684 /* Push.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Push.swift; sourceTree = "<group>"; };
 		B4E0674B24CD35DF00C64684 /* AuthorizationKeyPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationKeyPicker.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 			children = (
 				B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */,
 				B4E0674F24CD457300C64684 /* APNSwiftConnection+Convenience.swift */,
-				B4E0674524CC06C700C64684 /* Binding+Optional.swift */,
 				B4E0675124CD4E7B00C64684 /* Data+JSON.swift */,
 				B413CD7124D11B3A00249C59 /* DateFormatter+Utility.swift */,
 			);
@@ -285,7 +282,6 @@
 				B4E0676124CE5F6C00C64684 /* LogView.swift in Sources */,
 				B4E0671A24CBECA600C64684 /* NSOpenPane+Convenience.swift in Sources */,
 				B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */,
-				B4E0674624CC06C700C64684 /* Binding+Optional.swift in Sources */,
 				B4E0674224CBFD3C00C64684 /* AddAuthorizationKeyView.swift in Sources */,
 				B4E0675F24CE5F3600C64684 /* LogEntry.swift in Sources */,
 				B4E0675224CD4E7B00C64684 /* Data+JSON.swift in Sources */,
@@ -433,6 +429,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-L/opt/homebrew/opt/openssl@1.1/lib",
+					"-I/opt/homebrew/opt/openssl/include",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcginty.will.notifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -457,6 +457,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-L/opt/homebrew/opt/openssl@1.1/lib",
+					"-I/opt/homebrew/opt/openssl/include",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcginty.will.notifier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -502,7 +506,7 @@
 			repositoryURL = "https://github.com/kylebrowning/APNSwift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.0;
+				minimumVersion = 3.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

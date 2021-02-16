@@ -6,8 +6,17 @@
         "repositoryURL": "https://github.com/kylebrowning/APNSwift",
         "state": {
           "branch": null,
-          "revision": "b5ca1c9279a1748c84c05e83581cc2d739f28380",
-          "version": "1.7.0"
+          "revision": "03e83e2332d13a3c06d5cd70948166e5724c43c7",
+          "version": "3.0.0"
+        }
+      },
+      {
+        "package": "jwt-kit",
+        "repositoryURL": "https://github.com/vapor/jwt-kit.git",
+        "state": {
+          "branch": null,
+          "revision": "6055fe8439769aa3646a3c797d573ce7305849c8",
+          "version": "4.2.0"
         }
       },
       {
@@ -17,6 +26,15 @@
           "branch": null,
           "revision": "654d52d30f3dd4592e944c3e0bccb53178c992f6",
           "version": "4.2.1"
+        }
+      },
+      {
+        "package": "swift-crypto",
+        "repositoryURL": "https://github.com/apple/swift-crypto.git",
+        "state": {
+          "branch": null,
+          "revision": "8f4bfa5bc1951440c15710e9e893721aa4b2765c",
+          "version": "1.1.3"
         }
       },
       {
@@ -33,8 +51,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "2bae395344d41710dffab456265d534d7dc34ab8",
-          "version": "2.25.0"
+          "revision": "43931b7a7daf8120a487601530c8bc03ce711992",
+          "version": "2.25.1"
         }
       },
       {
@@ -51,8 +69,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
         "state": {
           "branch": null,
-          "revision": "901a01423316c4ce672b1b58ce62aecb8069cb1f",
-          "version": "2.10.1"
+          "revision": "62bf5083df970e67c886210fa5b857eacf044b7c",
+          "version": "2.10.2"
         }
       }
     ]
