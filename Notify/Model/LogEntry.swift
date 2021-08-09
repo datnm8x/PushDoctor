@@ -14,11 +14,17 @@ struct LogEntry: Hashable, Identifiable {
     
     let date: Date = Date()
     let push: Push
-    var errorDescription: String?
+    let errorDescription: String?
+    let underlyingErrorDescription: String?
     
     // MARK: Initializers
-    init(push: Push, errorDescription: String? = nil) {
+    init(push: Push, errorDescription: String? = nil, underlyingErrorDescription: String? = nil) {
         self.push = push
         self.errorDescription = errorDescription
+        self.underlyingErrorDescription = underlyingErrorDescription
+    }
+    
+    var completeErrorDescription: String? {
+        return [errorDescription, underlyingErrorDescription].compactMap { $0 }.joined(separator: " ")
     }
 }

@@ -94,7 +94,7 @@ struct LogEntryView: View {
             
             if isExpanded {
                 VStack(alignment: .leading) {
-                    if let error = entry.errorDescription {
+                    if let error = entry.completeErrorDescription {
                         LogEntryDetailAttributeView(title: "Error", value: error)
                     }
                     

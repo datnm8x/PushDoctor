@@ -14,6 +14,7 @@
 		B426095524CBBEDB0021F4EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B426095424CBBEDB0021F4EA /* Assets.xcassets */; };
 		B426095824CBBEDB0021F4EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B426095724CBBEDB0021F4EA /* Preview Assets.xcassets */; };
 		B426096224CBC1A50021F4EA /* APNSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B426096124CBC1A50021F4EA /* APNSwift */; };
+		B43FFA9B26C1E4140087B0B1 /* LogEntry+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43FFA9A26C1E4140087B0B1 /* LogEntry+ErrorHandling.swift */; };
 		B4E0671524CBE0A900C64684 /* PushClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0671424CBE0A900C64684 /* PushClient.swift */; };
 		B4E0671A24CBECA600C64684 /* NSOpenPane+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */; };
 		B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */; };
@@ -44,6 +45,7 @@
 		B426095724CBBEDB0021F4EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B426095924CBBEDB0021F4EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B426095A24CBBEDB0021F4EA /* Notify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notify.entitlements; sourceTree = "<group>"; };
+		B43FFA9A26C1E4140087B0B1 /* LogEntry+ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogEntry+ErrorHandling.swift"; sourceTree = "<group>"; };
 		B4E0671424CBE0A900C64684 /* PushClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushClient.swift; sourceTree = "<group>"; };
 		B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOpenPane+Convenience.swift"; sourceTree = "<group>"; };
 		B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationKey.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				B4E0674F24CD457300C64684 /* APNSwiftConnection+Convenience.swift */,
 				B4E0675124CD4E7B00C64684 /* Data+JSON.swift */,
 				B413CD7124D11B3A00249C59 /* DateFormatter+Utility.swift */,
+				B43FFA9A26C1E4140087B0B1 /* LogEntry+ErrorHandling.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				B4FCEE1124D0EBEA00F0091F /* AuthorizationKeySelectionView.swift in Sources */,
 				B4E0675024CD457300C64684 /* APNSwiftConnection+Convenience.swift in Sources */,
 				B4E0674824CD2EB900C64684 /* PushStore.swift in Sources */,
+				B43FFA9B26C1E4140087B0B1 /* LogEntry+ErrorHandling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

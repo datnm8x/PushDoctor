@@ -86,7 +86,7 @@ private extension ContentView {
                         
                     case .failure(let error):
                         self.result = .failure
-                        self.store.log(LogEntry(push: push, errorDescription: error.localizedDescription))
+                        self.store.log(LogEntry(push: push, error: error))
                     }
                 }
             }

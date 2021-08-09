@@ -34,6 +34,7 @@ class PushClient {
                                                                                       teamIdentifier: push.authorizationKey.teamID)
             let configuration = APNSwiftConfiguration(authenticationMethod: authenticationMethod, topic: push.bundleID,
                                                       environment: push.environment == .production ? .production : .sandbox, logger: nil, timeout: nil)
+            
             return APNSwiftConnection.connect(configuration: configuration, on: eventLoopGroup.next()).flatMap { connection in
                 return connection.send(pushPayload: .custom(.init(payload: push.payload.data(using: .utf8)!)), to: push.deviceToken)
             }
