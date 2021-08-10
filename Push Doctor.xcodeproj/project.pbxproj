@@ -66,6 +66,7 @@
 		B43FFB9126C20E0C0087B0B1 /* LogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		B43FFB9226C20E0C0087B0B1 /* EnvironmentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentPicker.swift; sourceTree = "<group>"; };
 		B43FFBA226C20EA30087B0B1 /* Push Doctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Push Doctor.entitlements"; sourceTree = "<group>"; };
+		B43FFBA326C210600087B0B1 /* Push-Doctor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Push-Doctor-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 				B43FFB8026C20E080087B0B1 /* Services */,
 				B43FFB8726C20E0C0087B0B1 /* Views */,
 				B43FFB5726C20DCC0087B0B1 /* PushDoctorApp.swift */,
+				B43FFBA326C210600087B0B1 /* Push-Doctor-Info.plist */,
 				B43FFBA226C20EA30087B0B1 /* Push Doctor.entitlements */,
 				B43FFB5D26C20DCE0087B0B1 /* Preview Content */,
 			);
@@ -434,6 +436,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Push-Doctor-Info.plist";
 				INFOPLIST_KEY_CFBundleExecutable = "Push Doctor";
 				INFOPLIST_KEY_CFBundleName = "Push Doctor";
 				INFOPLIST_KEY_CFBundleVersion = 1;
@@ -467,6 +470,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Push-Doctor-Info.plist";
 				INFOPLIST_KEY_CFBundleExecutable = "Push Doctor";
 				INFOPLIST_KEY_CFBundleName = "Push Doctor";
 				INFOPLIST_KEY_CFBundleVersion = 1;
