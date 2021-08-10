@@ -15,6 +15,7 @@
 		B426095824CBBEDB0021F4EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B426095724CBBEDB0021F4EA /* Preview Assets.xcassets */; };
 		B426096224CBC1A50021F4EA /* APNSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B426096124CBC1A50021F4EA /* APNSwift */; };
 		B43FFA9B26C1E4140087B0B1 /* LogEntry+ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43FFA9A26C1E4140087B0B1 /* LogEntry+ErrorHandling.swift */; };
+		B43FFA9D26C1F41B0087B0B1 /* TemplateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43FFA9C26C1F41B0087B0B1 /* TemplateStore.swift */; };
 		B4E0671524CBE0A900C64684 /* PushClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0671424CBE0A900C64684 /* PushClient.swift */; };
 		B4E0671A24CBECA600C64684 /* NSOpenPane+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */; };
 		B4E0674024CBF62A00C64684 /* AuthorizationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */; };
@@ -46,6 +47,7 @@
 		B426095924CBBEDB0021F4EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B426095A24CBBEDB0021F4EA /* Notify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notify.entitlements; sourceTree = "<group>"; };
 		B43FFA9A26C1E4140087B0B1 /* LogEntry+ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LogEntry+ErrorHandling.swift"; sourceTree = "<group>"; };
+		B43FFA9C26C1F41B0087B0B1 /* TemplateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateStore.swift; sourceTree = "<group>"; };
 		B4E0671424CBE0A900C64684 /* PushClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushClient.swift; sourceTree = "<group>"; };
 		B4E0671924CBECA600C64684 /* NSOpenPane+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSOpenPane+Convenience.swift"; sourceTree = "<group>"; };
 		B4E0673F24CBF62A00C64684 /* AuthorizationKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationKey.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				B4E0671424CBE0A900C64684 /* PushClient.swift */,
 				B4E0674724CD2EB900C64684 /* PushStore.swift */,
+				B43FFA9C26C1F41B0087B0B1 /* TemplateStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				B4FCEE0F24D0EADC00F0091F /* LabeledInputView.swift in Sources */,
 				B4E0675B24CE546D00C64684 /* TemplateListView.swift in Sources */,
 				B426095324CBBEDA0021F4EA /* ContentView.swift in Sources */,
+				B43FFA9D26C1F41B0087B0B1 /* TemplateStore.swift in Sources */,
 				B4E0674A24CD2EC800C64684 /* Push.swift in Sources */,
 				B426095124CBBEDA0021F4EA /* NotifyApp.swift in Sources */,
 				B4E0675D24CE5A7000C64684 /* Template.swift in Sources */,

@@ -28,7 +28,7 @@ struct PayloadEditorView: View {
                 }.sheet(isPresented: $isPresentingTemplatesSheet) {
                     TemplateListView(initialJSON: $jsonInput.wrappedValue, selectedTemplate: $jsonInput)
                 }
-                
+
                 Button(action: importJSON) {
                     Label("Import", systemImage: "square.and.arrow.down.fill")
                 }

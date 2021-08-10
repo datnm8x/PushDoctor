@@ -11,21 +11,40 @@ struct TemplateListView: View {
     
     @Environment(\.presentationMode) private var presentationMode
     
+    @StateObject var templateStore = TemplateStore()
     @State var initialJSON: String
-    @State private var templates: [Template] = [.basic, .customKey]
     @Binding var selectedTemplate: String
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(templates, id: \.self) { template in
+                ForEach(templateStore.templates, id: \.self) { template in
                     Text(template.name)
                         .onTapGesture {
                             selectedTemplate = template.contents
                         }
+                        .contextMenu {
+                            Button {
+                                withAnimation {
+                                    templateStore.remove(template: template)
+                                }
+                            } label: { Label("Delete", systemImage: "trash.fill") }
+                        }
                 }
+                Text("Add New")
+                    .onTapGesture {
+                        NSOpenPanel.open(from: ["json"]) { (result: Result<Template, NSOpenPanel.OpenError>) in
+                            switch result {
+                            case .failure(let error): debugPrint("Import error: \(error)")
+                            case .success(let content):
+                                withAnimation {
+                                    self.templateStore.templates.append(content)
+                                }
+                            }
+                        }
+                    }
             }.listStyle(SidebarListStyle())
-            
+                
             VStack {
                 Text("Templates")
                     .font(.headline)
