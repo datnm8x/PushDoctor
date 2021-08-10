@@ -1,14 +1,14 @@
 //
-//  NotifyApp.swift
-//  Notify
+//  PushDoctorApp.swift
+//  Push Doctor
 //
-//  Created by William McGinty on 7/24/20.
+//  Created by Will McGinty on 8/9/21.
 //
 
 import SwiftUI
 
 @main
-struct NotifyApp: App {
+struct PushDoctorApp: App {
     
     @StateObject var store = PushStore()
     var client = PushClient()
@@ -19,3 +19,4 @@ struct NotifyApp: App {
         }
     }
 }
+
