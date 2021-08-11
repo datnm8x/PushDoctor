@@ -9,11 +9,12 @@ import SwiftUI
 
 struct AuthorizationKeySelectionView: View {
     
-    // MARK: Properties
+    // MARK: - Properties
     @ObservedObject var store: PushStore
     @State private var isPresentingAddKeySheet: Bool = false
     @Binding var selectedKey: AuthorizationKey?
     
+    // MARK: - Body
     var body: some View {
         HStack {
             AuthorizationKeyPicker(keys: $store.authorizationKeys, selected: $selectedKey)
@@ -32,7 +33,7 @@ struct AuthorizationKeySelectionView: View {
     }
 }
 
-// MARK: Helper
+// MARK: - Helper
 private extension AuthorizationKeySelectionView {
 
     func removeSelectedKey() {

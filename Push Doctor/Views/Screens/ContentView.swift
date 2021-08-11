@@ -10,11 +10,12 @@ import AppKit
 
 struct ContentView: View {
     
+    // MARK: - Subtypes
     enum Result: String {
         case success, failure
     }
     
-    // MARK: Properties
+    // MARK: - Properties
     var client: PushClient
     @ObservedObject var store: PushStore
     
@@ -27,6 +28,7 @@ struct ContentView: View {
     
     @State private var isPresentingLogSheet: Bool = false
     
+    // MARK: - Body
     var body: some View {
         VStack(spacing: 50) {
             VStack {
@@ -64,7 +66,7 @@ struct ContentView: View {
     }
 }
 
-// MARK: Helper
+// MARK: - Helper
 private extension ContentView {
     
     var push: Push? {

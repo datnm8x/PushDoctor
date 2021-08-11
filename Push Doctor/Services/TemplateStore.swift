@@ -13,12 +13,12 @@ class TemplateStore: ObservableObject {
         didSet { TemplateStore.updateStoredTemplates(templates) }
     }
     
-    // MARK: Initializers
+    // MARK: - Initializers
     init() {
         self.templates = TemplateStore.storedTemplates ?? [.basic, .customKey]
     }
 
-    // MARK: Modifying
+    // MARK: - Modifying
     func add(template: Template) {
         templates.append(template)
     }
@@ -34,7 +34,7 @@ class TemplateStore: ObservableObject {
     }
 }
 
-//// MARK: Storage
+// MARK: - Storage
 private extension TemplateStore {
     
     private static var storageURL: URL {

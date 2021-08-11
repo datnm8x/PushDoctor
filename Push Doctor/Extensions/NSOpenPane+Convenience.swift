@@ -17,7 +17,7 @@ extension String: FileOpenable {
 }
 
 
-// MARK: NSOpenPanel + Convenience
+// MARK: - NSOpenPanel + Convenience
 extension NSOpenPanel {
     
     enum OpenError: Error {

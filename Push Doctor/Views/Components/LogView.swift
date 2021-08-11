@@ -9,11 +9,13 @@ import SwiftUI
 
 struct LogView: View {
     
-    // MARK: Properties
-    @ObservedObject var store: PushStore
-    @State private var selectedEntries: Set<LogEntry> = []
+    // MARK: - Properties
     @Environment(\.presentationMode) private var presentationMode
     
+    @ObservedObject var store: PushStore
+    @State private var selectedEntries: Set<LogEntry> = []
+    
+    // MARK: - Body
     var body: some View {
         VStack {
             Text("Activity Log")
@@ -46,7 +48,7 @@ struct LogView: View {
     }
 }
 
-// MARK: Helper
+// MARK: - Helper
 private extension LogView {
     
     func closeLog() {
@@ -62,7 +64,7 @@ private extension LogView {
     }
 }
 
-// MARK: Subviews
+// MARK: - Subviews
 struct EmptyLogView: View {
     
     var body: some View {
@@ -76,10 +78,11 @@ struct EmptyLogView: View {
 
 struct LogEntryView: View {
     
-    // MARK: Properties
+    // MARK: - Properties
     let entry: LogEntry
     let isExpanded: Bool
     
+    // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
@@ -116,10 +119,11 @@ struct LogEntryView: View {
 
 struct LogEntryDetailAttributeView: View {
     
-    // MARK: Properties
+    // MARK: - Properties
     let title: String
     let value: String
     
+    // MARK: - Body
     var body: some View {
         HStack(alignment: .bottom) {
             Text(title)

@@ -16,13 +16,13 @@ class PushStore: ObservableObject {
     
     @Published var activityLog: [LogEntry]
 
-    // MARK: Initializers
+    // MARK: - Initializers
     init() {
         self.authorizationKeys = PushStore.storedAuthorizationKeys
         self.activityLog = []
     }
 
-    // MARK: Modifying
+    // MARK: - Modifying
     func add(authorizationKey: AuthorizationKey) {
         authorizationKeys.append(authorizationKey)
     }
@@ -36,7 +36,7 @@ class PushStore: ObservableObject {
     }
 }
 
-//// MARK: Storage
+// MARK: - Storage
 private extension PushStore {
 
     private static var keychain: Keychain { Keychain(service: "com.mcginty.will.notify") }

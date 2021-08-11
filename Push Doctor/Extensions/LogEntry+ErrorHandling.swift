@@ -19,6 +19,7 @@ extension LogEntry {
     }
 }
 
+// MARK: - NIOSSLError + Formatting
 private extension NIOSSLError {
     
     var caseDescription: String {

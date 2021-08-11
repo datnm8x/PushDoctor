@@ -26,7 +26,7 @@ class PushClient {
         }
     }
 
-    // MARK: Interface
+    // MARK: - Interface
     func send(push: Push) -> EventLoopFuture<Void> {
         do {
             let authenticationMethod = APNSwiftConfiguration.AuthenticationMethod.jwt(key: try .private(pem: push.authorizationKey.p8.contents),

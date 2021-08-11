@@ -9,12 +9,14 @@ import SwiftUI
 
 struct TemplateListView: View {
     
+    // MARK: - Properties
     @Environment(\.presentationMode) private var presentationMode
     
     @ObservedObject var templateStore: TemplateStore
     @State var initialJSON: String
     @Binding var selectedTemplate: String
     
+    // MARK: - Body
     var body: some View {
         NavigationView {
             List {
@@ -72,6 +74,10 @@ struct TemplateListView: View {
             }.padding()
         }
     }
+}
+
+// MARK: - Helper
+private extension TemplateListView {
     
     func renameTemplate(_ template: Template) {
         NSAlert.presentAlert(for: .templateNaming(with: template.name, acceptAction: { name in

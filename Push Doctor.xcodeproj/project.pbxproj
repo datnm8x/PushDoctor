@@ -161,8 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				B43FFB8126C20E080087B0B1 /* TemplateStore.swift */,
-				B43FFB8226C20E080087B0B1 /* PushClient.swift */,
 				B43FFB8326C20E080087B0B1 /* PushStore.swift */,
+				B43FFB8226C20E080087B0B1 /* PushClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct EnvironmentPicker: View {
     
+    // MARK: - Properties
     @Binding var selected: Push.Environment
 
+    // MARK: - Body
     var body: some View {
         Picker("Select Environment", selection: $selected) {
             ForEach(Push.Environment.allCases) { env in

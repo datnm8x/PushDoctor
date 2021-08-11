@@ -9,11 +9,13 @@ import SwiftUI
 
 struct LabeledInputView: View {
     
-    // MARK: Properties
+    // MARK: - Properties
     let title: String
     let placeholder: String?
+    
     @Binding var value: String
     
+    // MARK: - Body
     var body: some View {
         HStack {
             Text(title)

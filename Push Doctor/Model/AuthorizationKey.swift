@@ -12,7 +12,7 @@ struct AuthorizationKey: Codable, Hashable, Identifiable {
     
     var id: P8 { p8 }
     
-    // MARK: Properties
+    // MARK: - Properties
     let p8: P8
     var name: String
     var keyID: String
@@ -25,7 +25,7 @@ extension AuthorizationKey {
         
         var id: URL { sourceURL }
         
-        // MARK: Properties
+        // MARK: - Properties
         let sourceURL: URL
         let contents: String
         

@@ -9,13 +9,14 @@ import SwiftUI
 
 struct PayloadEditorView: View {
     
-    // MARK: Properties
+    // MARK: - Properties
     @StateObject var templateStore = TemplateStore()
     
     @Binding var jsonInput: String
     @State private(set) var isValid: Bool = true
     @State private var isPresentingTemplatesSheet: Bool = false
 
+    // MARK: - Body
     var body: some View {
         VStack {
             TextEditor(text: $jsonInput)
@@ -49,7 +50,7 @@ struct PayloadEditorView: View {
     }
 }
 
-// MARK: Helper
+// MARK: - Helper
 private extension PayloadEditorView {
     
     func selectTemplate() {

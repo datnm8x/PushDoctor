@@ -12,10 +12,10 @@ extension NSAlert {
     // MARK: - Message
     struct AlertConfiguration {
         
-        // MARK: - Properties
         public var title: String
         public var message: String
         
+        // MARK: - Preset
         static let duplicateName = AlertConfiguration(title: "Duplicate Name",
                                                       message: "A template with that name already exists. Please choose another.")
     }
@@ -33,7 +33,6 @@ extension NSAlert {
     // MARK: - Text Input
     struct TextInputAlertConfiguration {
         
-        // MARK: - Properties
         public var title: String
         public var message: String
         public var initialValue: String = ""
@@ -45,6 +44,7 @@ extension NSAlert {
         public var cancel: String = "Cancel"
         public var cancelAction: (() -> Void)? = nil
         
+        // MARK: - Preset
         static func templateNaming(with existing: String = "", acceptAction: @escaping (String) -> Void) -> TextInputAlertConfiguration {
             return TextInputAlertConfiguration(title: "Template Name", message: "Please enter a name for the template:",
                                                initialValue: existing, placeholder: "Name",  acceptAction: acceptAction)

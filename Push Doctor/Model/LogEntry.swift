@@ -9,7 +9,7 @@ import Foundation
 
 struct LogEntry: Hashable, Identifiable {
     
-    // MARK: Properties
+    // MARK: - Properties
     var id: Push { push }
     
     let date: Date = Date()
@@ -17,7 +17,7 @@ struct LogEntry: Hashable, Identifiable {
     let errorDescription: String?
     let underlyingErrorDescription: String?
     
-    // MARK: Initializers
+    // MARK: - Initializers
     init(push: Push, errorDescription: String? = nil, underlyingErrorDescription: String? = nil) {
         self.push = push
         self.errorDescription = errorDescription

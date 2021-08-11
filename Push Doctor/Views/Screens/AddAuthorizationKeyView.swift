@@ -20,6 +20,7 @@ struct AddAuthorizationKeyView: View {
     @State private var keyID: String = ""
     @State private var teamID: String = ""
     
+    // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
@@ -73,7 +74,7 @@ struct AddAuthorizationKeyView: View {
     }
 }
 
-// MARK: Helper
+// MARK: - Helper
 private extension AddAuthorizationKeyView {
     
     func cancel() {
