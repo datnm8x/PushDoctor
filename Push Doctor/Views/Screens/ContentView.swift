@@ -23,7 +23,7 @@ struct ContentView: View {
     @State private var deviceToken: String = ""
     @State private var payload: String = String.basicTemplateJSON ?? ""
     @State private var selectedEnvironment: Push.Environment = .sandbox
-    @State private var result: Result?
+    @State private var pushResult: Result?
     
     @State private var isPresentingLogSheet: Bool = false
     
@@ -38,9 +38,9 @@ struct ContentView: View {
             }
              
             HStack {
-                result.map { Text($0.rawValue.capitalized) }
+                pushResult.map { Text($0.rawValue.capitalized) }
                     .font(.headline)
-                    .foregroundColor(result == .success ? Color.green : Color.red)
+                    .foregroundColor(pushResult == .success ? Color.green : Color.red)
                     .transition(AnyTransition.opacity)
                 
                 Spacer()
@@ -78,23 +78,31 @@ private extension ContentView {
         client.send(push: push).whenComplete { result in
             
             DispatchQueue.main.async {
-                withAnimation {
-                    switch result {
-                    case .success:
-                        self.result = .success
-                        self.store.log(LogEntry(push: push))
-                        
-                    case .failure(let error):
-                        self.result = .failure
-                        self.store.log(LogEntry(push: push, error: error))
-                    }
-                }
+                self.configure(for: result, fromSending: push)
             }
         }
     }
     
     func toggleLog() {
         isPresentingLogSheet.toggle()
+    }
+    
+    func configure(for pushResult: Swift.Result<Void, Error>, fromSending push: Push) {
+        withAnimation {
+            switch pushResult {
+            case .success:
+                self.pushResult = .success
+                self.store.log(LogEntry(push: push))
+                
+            case .failure(let error):
+                self.pushResult = .failure
+                self.store.log(LogEntry(push: push, error: error))
+            }
+        }
+        
+        withAnimation(.easeOut.delay(3)) {
+            self.pushResult = nil
+        }
     }
 }
 
