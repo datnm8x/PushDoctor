@@ -35,6 +35,7 @@
 		B43FFB9B26C20E0C0087B0B1 /* EnvironmentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43FFB9226C20E0C0087B0B1 /* EnvironmentPicker.swift */; };
 		B43FFB9E26C20E430087B0B1 /* APNSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B43FFB9D26C20E430087B0B1 /* APNSwift */; };
 		B43FFBA126C20E4E0087B0B1 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = B43FFBA026C20E4E0087B0B1 /* KeychainAccess */; };
+		B4C2E1F426C374AF00905686 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C2E1F326C374AF00905686 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		B43FFB9226C20E0C0087B0B1 /* EnvironmentPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentPicker.swift; sourceTree = "<group>"; };
 		B43FFBA226C20EA30087B0B1 /* Push Doctor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Push Doctor.entitlements"; sourceTree = "<group>"; };
 		B43FFBA326C210600087B0B1 /* Push-Doctor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Push-Doctor-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B4C2E1F326C374AF00905686 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,12 +191,21 @@
 		B43FFB8E26C20E0C0087B0B1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B4C2E1F226C374A700905686 /* Alert */,
 				B43FFB8F26C20E0C0087B0B1 /* AuthorizationKeyPicker.swift */,
 				B43FFB9026C20E0C0087B0B1 /* LabeledInputView.swift */,
 				B43FFB9126C20E0C0087B0B1 /* LogView.swift */,
 				B43FFB9226C20E0C0087B0B1 /* EnvironmentPicker.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		B4C2E1F226C374A700905686 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				B4C2E1F326C374AF00905686 /* Alert.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +294,7 @@
 				B43FFB9626C20E0C0087B0B1 /* TemplateListView.swift in Sources */,
 				B43FFB8526C20E080087B0B1 /* PushClient.swift in Sources */,
 				B43FFB6E26C20DED0087B0B1 /* Data+JSON.swift in Sources */,
+				B4C2E1F426C374AF00905686 /* Alert.swift in Sources */,
 				B43FFB9926C20E0C0087B0B1 /* LabeledInputView.swift in Sources */,
 				B43FFB9826C20E0C0087B0B1 /* AuthorizationKeyPicker.swift in Sources */,
 				B43FFB9B26C20E0C0087B0B1 /* EnvironmentPicker.swift in Sources */,

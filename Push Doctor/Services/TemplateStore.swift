@@ -22,6 +22,12 @@ class TemplateStore: ObservableObject {
     func add(template: Template) {
         templates.append(template)
     }
+    
+    func replace(template: Template, with new: Template) {
+        if let index = templates.firstIndex(of: template) {
+            templates[index] = new
+        }
+    }
 
     func remove(template: Template) {
         templates.removeAll(where: { $0.id == template.id })

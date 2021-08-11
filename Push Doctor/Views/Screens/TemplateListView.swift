@@ -11,7 +11,7 @@ struct TemplateListView: View {
     
     @Environment(\.presentationMode) private var presentationMode
     
-    @StateObject var templateStore = TemplateStore()
+    @ObservedObject var templateStore: TemplateStore
     @State var initialJSON: String
     @Binding var selectedTemplate: String
     
@@ -26,6 +26,12 @@ struct TemplateListView: View {
                         .contextMenu {
                             Button {
                                 withAnimation {
+                                    renameTemplate(template)
+                                }
+                            } label: { Label("Rename", systemImage: "pencil") }
+                            
+                            Button {
+                                withAnimation {
                                     templateStore.remove(template: template)
                                 }
                             } label: { Label("Delete", systemImage: "trash.fill") }
@@ -38,7 +44,7 @@ struct TemplateListView: View {
                             case .failure(let error): debugPrint("Import error: \(error)")
                             case .success(let content):
                                 withAnimation {
-                                    self.templateStore.templates.append(content)
+                                    templateStore.templates.append(content)
                                 }
                             }
                         }
@@ -65,6 +71,17 @@ struct TemplateListView: View {
                 }
             }.padding()
         }
+    }
+    
+    func renameTemplate(_ template: Template) {
+        NSAlert.presentAlert(for: .templateNaming(with: template.name, acceptAction: { name in
+            guard name != template.name else { /* No op */ return }
+            guard !templateStore.templates.contains(where: { $0.name == name }) else {
+                return NSAlert.presentInformationalAlert(for: .duplicateName)
+            }
+            
+            templateStore.replace(template: template, with: .init(name: name, contents: template.contents))
+        }))
     }
     
     func cancel() {

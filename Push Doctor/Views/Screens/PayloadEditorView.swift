@@ -10,6 +10,8 @@ import SwiftUI
 struct PayloadEditorView: View {
     
     // MARK: Properties
+    @StateObject var templateStore = TemplateStore()
+    
     @Binding var jsonInput: String
     @State private(set) var isValid: Bool = true
     @State private var isPresentingTemplatesSheet: Bool = false
@@ -26,13 +28,19 @@ struct PayloadEditorView: View {
                 Button(action: selectTemplate) {
                     Label("Templates", systemImage: "folder.fill")
                 }.sheet(isPresented: $isPresentingTemplatesSheet) {
-                    TemplateListView(initialJSON: $jsonInput.wrappedValue, selectedTemplate: $jsonInput)
+                    TemplateListView(templateStore: templateStore, initialJSON: $jsonInput.wrappedValue, selectedTemplate: $jsonInput)
                 }
-
+                
                 Button(action: importJSON) {
-                    Label("Import", systemImage: "square.and.arrow.down.fill")
+                    Label("Import From File", systemImage: "square.and.arrow.down.fill")
                 }
+                
                 Spacer()
+                
+                Button(action: templatizeJSON) {
+                    Label("Templatize", systemImage: "plus.rectangle.fill.on.folder.fill")
+                }
+                
                 Button(action: lintJSON) {
                     Label("Lint", systemImage: isValid ? "checkmark.circle.fill" : "xmark.circle.fill")
                 }
@@ -57,6 +65,19 @@ private extension PayloadEditorView {
                 self.lintJSON()
             }
         }
+    }
+    
+    func templatizeJSON() {
+        NSAlert.presentAlert(for: .templateNaming(acceptAction: { name in
+            if !name.isEmpty {
+                guard !templateStore.templates.contains(where: { $0.name == name }) else {
+                    return NSAlert.presentInformationalAlert(for: .duplicateName)
+                }
+                
+                let template = Template(name: name, contents: self.jsonInput)
+                self.templateStore.add(template: template)
+            }
+        }))
     }
     
     func lintJSON() {
