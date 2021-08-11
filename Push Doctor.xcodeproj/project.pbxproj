@@ -451,7 +451,7 @@
 				INFOPLIST_FILE = "Push-Doctor-Info.plist";
 				INFOPLIST_KEY_CFBundleExecutable = "Push Doctor";
 				INFOPLIST_KEY_CFBundleName = "Push Doctor";
-				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_CFBundleVersion = 2;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -485,7 +485,7 @@
 				INFOPLIST_FILE = "Push-Doctor-Info.plist";
 				INFOPLIST_KEY_CFBundleExecutable = "Push Doctor";
 				INFOPLIST_KEY_CFBundleName = "Push Doctor";
-				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_CFBundleVersion = 2;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
