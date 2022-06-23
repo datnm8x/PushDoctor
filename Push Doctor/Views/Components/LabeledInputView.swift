@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct LabeledInputView: View {
-    
-    // MARK: - Properties
-    let title: String
-    let placeholder: String?
-    
-    @Binding var value: String
-    
-    // MARK: - Body
-    var body: some View {
-        HStack {
-            Text(title)
-            TextField(placeholder ?? "", text: $value)
-        }
+  
+  // MARK: - Properties
+  let title: String
+  let placeholder: String?
+  
+  @Binding var value: String
+  
+  // MARK: - Body
+  var body: some View {
+    HStack {
+      Text(title)
+      TextField(placeholder ?? "", text: $value)
     }
+  }
 }
+

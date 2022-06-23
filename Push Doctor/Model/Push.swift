@@ -8,16 +8,17 @@
 import Foundation
 
 struct Push: Codable, Hashable {
+  
+  enum Environment: String, Codable, CaseIterable, Identifiable {
+    case sandbox, production
     
-    enum Environment: String, Codable, CaseIterable, Identifiable {
-        case sandbox, production
-        
-        var id: String { rawValue }
-    }
-    
-    var authorizationKey: AuthorizationKey
-    var bundleID: String
-    var deviceToken: String
-    var environment: Environment
-    var payload: String
+    var id: String { rawValue }
+  }
+  
+  var authorizationKey: AuthorizationKey
+  var bundleID: String
+  var deviceToken: String
+  var environment: Environment
+  var payload: String
 }
+
